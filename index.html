@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chintan Lad</title>
+    <meta name="description" content="Final-year Computer Science student specializing in software engineering and data analytics. Building innovative solutions with MERN stack, AI/ML, and cloud technologies.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://framerusercontent.com/images/3dpALmvrIR88qPmbDlYoTyJSig.png">
+    <link rel="shortcut icon" type="image/png" href="https://framerusercontent.com/images/3dpALmvrIR88qPmbDlYoTyJSig.png">
+    <link rel="apple-touch-icon" href="https://framerusercontent.com/images/3dpALmvrIR88qPmbDlYoTyJSig.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Framer Motion -->
+    <script src="https://unpkg.com/framer-motion@11.3.21/dist/framer-motion.js"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rich-black': {
+                            DEFAULT: '#0d1b2a',
+                            100: '#030609',
+                            200: '#050b11',
+                            300: '#08111a',
+                            400: '#0b1622',
+                            500: '#0d1b2a',
+                            600: '#234870',
+                            700: '#3875b6',
+                            800: '#74a3d4',
+                            900: '#bad1ea'
+                        },
+                        'oxford-blue': {
+                            DEFAULT: '#1b263b',
+                            100: '#05080c',
+                            200: '#0b0f18',
+                            300: '#101724',
+                            400: '#161f30',
+                            500: '#1b263b',
+                            600: '#364c75',
+                            700: '#5172af',
+                            800: '#8ba1ca',
+                            900: '#c5d0e4'
+                        },
+                        'yinmn-blue': {
+                            DEFAULT: '#415a77',
+                            100: '#0d1218',
+                            200: '#1a242f',
+                            300: '#273647',
+                            400: '#34485f',
+                            500: '#415a77',
+                            600: '#587aa1',
+                            700: '#819bb9',
+                            800: '#abbcd1',
+                            900: '#d5dee8'
+                        },
+                        'silver-lake-blue': {
+                            DEFAULT: '#778da9',
+                            100: '#161c23',
+                            200: '#2c3746',
+                            300: '#425369',
+                            400: '#586f8d',
+                            500: '#778da9',
+                            600: '#91a2ba',
+                            700: '#acbacb',
+                            800: '#c8d1dc',
+                            900: '#e3e8ee'
+                        },
+                        'platinum': {
+                            DEFAULT: '#e0e1dd',
+                            100: '#2e2f2a',
+                            200: '#5b5e53',
+                            300: '#898c7e',
+                            400: '#b4b6ad',
+                            500: '#e0e1dd',
+                            600: '#e5e6e3',
+                            700: '#ececea',
+                            800: '#f2f3f1',
+                            900: '#f9f9f8'
+                        },
+                        'midnight-green': {
+                            DEFAULT: '#124559',
+                            100: '#040e12',
+                            200: '#071c24',
+                            300: '#0b2935',
+                            400: '#0f3747',
+                            500: '#124559',
+                            600: '#20799c',
+                            700: '#36a9d6',
+                            800: '#79c5e4',
+                            900: '#bce2f1'
+                        },
+                        'air-force-blue': {
+                            DEFAULT: '#598392',
+                            100: '#121a1d',
+                            200: '#24343a',
+                            300: '#354e57',
+                            400: '#476874',
+                            500: '#598392',
+                            600: '#769dab',
+                            700: '#99b6c0',
+                            800: '#bbced5',
+                            900: '#dde7ea'
+                        },
+                        'ash-gray': {
+                            DEFAULT: '#aec3b0',
+                            100: '#1f2a20',
+                            200: '#3e5441',
+                            300: '#5e7f61',
+                            400: '#83a386',
+                            500: '#aec3b0',
+                            600: '#bdcebf',
+                            700: '#cedbcf',
+                            800: '#dee7df',
+                            900: '#eff3ef'
+                        },
+                        'beige': {
+                            DEFAULT: '#eff6e0',
+                            100: '#384915',
+                            200: '#71912a',
+                            300: '#a4cc4e',
+                            400: '#c9e197',
+                            500: '#eff6e0',
+                            600: '#f2f8e6',
+                            700: '#f5f9ec',
+                            800: '#f8fbf2',
+                            900: '#fcfdf9'
+                        }
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'system-ui', 'sans-serif'],
+                        'space-grotesk': ['Space Grotesk', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            background-color: rgb(248, 247, 255);
+            color: rgb(29, 61, 60);
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        .section-padding {
+            padding: 5rem 0;
+        }
+        
+        .container-max {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.05) 0%, rgba(65, 90, 119, 0.05) 100%);
+        }
+        
+        .card-shadow {
+            box-shadow: 0 10px 25px rgba(13, 27, 42, 0.1);
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        /* LinkedIn-style profile section */
+        .profile-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            border: 1px solid rgba(13, 27, 42, 0.1);
+        }
+        
+        /* Navigation hover effects */
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #415a77;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Video Background Styles */
+        .header_background-video-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .video-wrap {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        #myVideo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        /* Overlay for better text readability - matching your color scheme */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(248, 247, 255, 0.92) 0%, 
+                rgba(224, 225, 221, 0.88) 25%,
+                rgba(65, 90, 119, 0.15) 50%,
+                rgba(27, 38, 59, 0.25) 75%,
+                rgba(248, 247, 255, 0.9) 100%);
+            z-index: 1;
+        }
+        
+        /* Alternative subtle overlay option */
+        .video-overlay-alt {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(248, 247, 255, 0.95) 0%, 
+                rgba(119, 141, 169, 0.08) 30%,
+                rgba(65, 90, 119, 0.12) 70%,
+                rgba(248, 247, 255, 0.92) 100%);
+            z-index: 1;
+        }
+        
+        /* Ensure content is above overlay */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body class="smooth-scroll">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-platinum-300">
+        <div class="container-max">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a class="nav_logo_wrap inline-block" href="#home" aria-label="Home page" data-cta="Navigation">
+                    <div class="logo-container flex items-center" style="width: 180px; height: 40px;">
+                        <!-- Static Logo -->
+                        <div class="w-8 h-8 rounded-full overflow-hidden mr-3 flex-shrink-0">
+                            <img src="https://framerusercontent.com/images/3dpALmvrIR88qPmbDlYoTyJSig.png" alt="CL" class="w-full h-full object-cover">
+                        </div>
+                        
+                        <!-- Animated Text Container -->
+                        <div class="text-container relative overflow-hidden flex-1" style="height: 24px;">
+                            <!-- Full Name Version (visible by default) -->
+                            <div class="logo-full absolute inset-0 transition-all duration-500 ease-in-out opacity-100 transform translate-x-0 flex items-center">
+                                <span class="text-oxford-blue-500 font-bold text-lg font-space-grotesk whitespace-nowrap">CHINTAN LAD</span>
+                            </div>
+                            
+                            <!-- Initials Version (hidden by default, visible when scrolled) -->
+                            <div class="logo-initials absolute inset-0 transition-all duration-500 ease-in-out opacity-0 transform translate-x-full flex items-center">
+                                <span class="text-oxford-blue-500 font-bold text-lg font-space-grotesk">CL</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-oxford-blue-400 hover:text-oxford-blue-600 font-medium">Home</a>
+                    <a href="#about" class="nav-link text-oxford-blue-400 hover:text-oxford-blue-600 font-medium">About</a>
+                    <a href="#projects" class="nav-link text-oxford-blue-400 hover:text-oxford-blue-600 font-medium">Projects</a>
+                    <a href="#skills" class="nav-link text-oxford-blue-400 hover:text-oxford-blue-600 font-medium">Skills</a>
+                    <a href="#experience" class="nav-link text-oxford-blue-400 hover:text-oxford-blue-600 font-medium">Experience</a>
+                    <a href="#contact" class="nav-link text-oxford-blue-400 hover:text-oxford-blue-600 font-medium">Contact</a>
+                </div>
+                
+                <!-- Hamburger Menu Button -->
+                <button data-collapse-toggle="navbar-hamburger" type="button" class="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-oxford-blue-500 rounded-lg hover:bg-platinum-300 focus:outline-none focus:ring-2 focus:ring-platinum-400 md:hidden" aria-controls="navbar-hamburger" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div class="hidden w-full md:hidden" id="navbar-hamburger">
+            <ul class="flex flex-col font-medium mt-4 rounded-lg bg-white border border-platinum-300">
+                <li>
+                    <a href="#home" class="block py-2 px-3 text-oxford-blue-500 bg-yinmn-blue-100 rounded" aria-current="page">Home</a>
+                </li>
+                <li>
+                    <a href="#about" class="block py-2 px-3 text-oxford-blue-400 rounded hover:bg-platinum-300 hover:text-oxford-blue-600">About</a>
+                </li>
+                <li>
+                    <a href="#projects" class="block py-2 px-3 text-oxford-blue-400 rounded hover:bg-platinum-300 hover:text-oxford-blue-600">Projects</a>
+                </li>
+                <li>
+                    <a href="#skills" class="block py-2 px-3 text-oxford-blue-400 rounded hover:bg-platinum-300 hover:text-oxford-blue-600">Skills</a>
+                </li>
+                <li>
+                    <a href="#experience" class="block py-2 px-3 text-oxford-blue-400 rounded hover:bg-platinum-300 hover:text-oxford-blue-600">Experience</a>
+                </li>
+                <li>
+                    <a href="#contact" class="block py-2 px-3 text-oxford-blue-400 rounded hover:bg-platinum-300 hover:text-oxford-blue-600">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section - LinkedIn Profile Style with Video Background -->
+    <section id="home" class="section-padding mt-16 relative">
+        <!-- Background Video -->
+        <div class="header_background-video-wrapper">
+            <div class="video-wrap w-embed">
+                <video autoplay="" muted="" loop="" playsinline="" id="myVideo" poster="https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/65c8ed3e7d491e37259a30c5_Langchain-hero-1_1706794335%201-placeholder.jpg">
+                    <source data-src="https://customer-xp1a3vy0ydc4ega7.cloudflarestream.com/bb6cf069546e3d829aa5808ac8b07748/downloads/default.mp4" type="video/mp4" src="https://customer-xp1a3vy0ydc4ega7.cloudflarestream.com/bb6cf069546e3d829aa5808ac8b07748/downloads/default.mp4">
+                </video>
+            </div>
+        </div>
+        
+        
+        
+        <!-- Hero Content -->
+        <div class="container-max hero-content">
+            <div class="profile-card overflow-hidden">
+                <!-- LinkedIn-style Top Card Background -->
+                <div class="top-card-background-hero-image relative" style="min-height: 159px; max-height: 159px;">
+                    <div class="top-card-background-hero-image__bg-image w-full h-full">
+                        <div class="profile-background-image w-full h-full relative overflow-hidden">
+                            <div class="profile-background-image__image-container w-full h-full">
+                                <div class="w-full h-full bg-gradient-to-r from-yinmn-blue-500 via-silver-lake-blue-500 to-ash-gray-500 opacity-80"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Profile Content Section -->
+                <div class="relative px-6 lg:px-8 pb-8" style="margin-top: -80px;">
+                    <div class="flex flex-col lg:flex-row items-center lg:items-start gap-6">
+                        <!-- Profile Photo -->
+                        <div class="flex-shrink-0 relative z-10">
+                            <div class="w-32 h-32 lg:w-40 lg:h-40 rounded-full border-4 border-white shadow-lg overflow-hidden">
+                                <img src="./profile-photo.jpeg" 
+                                     alt="Chintan Lad Profile Photo" 
+                                     class="w-full h-full object-cover transform scale-150" 
+                                     style="object-position: center 100%;">
+                            </div>
+                        </div>
+                        
+                        <!-- Profile Info -->
+                        <div class="flex-1 text-center lg:text-left pt-4 lg:pt-8">
+                            <h1 class="text-3xl lg:text-4xl font-bold text-oxford-blue-500 mb-2 font-space-grotesk">
+                                Chintan Lad
+                            </h1>
+                            <h2 class="text-lg lg:text-xl text-yinmn-blue-500 mb-3 font-medium">
+                                Aspiring Software Engineer & Data Analyst
+                            </h2>
+                            <div class="text-sm text-air-force-blue-400 mb-4 space-y-1">
+                                <p>
+                                    <i class="fas fa-graduation-cap mr-2"></i>
+                                    Final-year B.Tech Student at VIT-AP University
+                                </p>
+                                <p>
+                                    <i class="fas fa-map-marker-alt mr-2"></i>
+                                    Gujarat, India
+                                </p>
+                            </div>
+                            
+                            <p class="text-base text-oxford-blue-400 mb-6 max-w-2xl leading-relaxed">
+                                Passionate about building innovative solutions with expertise in full-stack development, 
+                                AI/ML, and data analytics. Experienced in MERN stack, Python, and cloud technologies 
+                                with multiple certifications from AWS, IBM, and Oracle Cloud.
+                            </p>
+                            
+                            <!-- CTA Buttons -->
+                            <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-6">
+                                <a href="#contact" class="magnetic bg-yinmn-blue-500 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-yinmn-blue-600 transition-colors text-sm">
+                                    Get In Touch
+                                </a>
+                                <a href="./resume.pdf" download="Chintan_Lad_Resume.pdf" class="magnetic bg-oxford-blue-500 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-oxford-blue-600 transition-colors text-sm flex items-center justify-center">
+                                    <i class="fas fa-download mr-2"></i>
+                                    Download Resume
+                                </a>
+                                <a href="#projects" class="magnetic border-2 border-yinmn-blue-500 text-yinmn-blue-500 px-6 py-2.5 rounded-lg font-medium hover:bg-yinmn-blue-500 hover:text-white transition-colors text-sm">
+                                    View My Work
+                                </a>
+                            </div>
+                            
+                            <!-- Certificate Buttons -->
+                            <div class="flex flex-wrap gap-2 justify-center lg:justify-start">
+                                <button class="magnetic artdeco-button artdeco-button--2 artdeco-button--secondary bg-white border border-platinum-300 text-oxford-blue-500 hover:bg-oxford-blue-500 hover:text-white transition-colors px-4 py-2 rounded-lg font-medium text-sm">
+                                    <span class="artdeco-button__text">
+                                        Oracle Cloud Infrastructure Certified
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container-max">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-oxford-blue-500 mb-4 font-space-grotesk">About Me</h2>
+                <div class="w-20 h-1 bg-yinmn-blue-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- About Content -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-oxford-blue-500 mb-6">
+                        Passionate About Technology & Innovation
+                    </h3>
+                    <p class="text-air-force-blue-400 mb-6 leading-relaxed">
+                        I'm a final-year Computer Science and Business Systems student at VIT-AP University with a strong foundation in programming, data analysis, and software development. My journey has been driven by curiosity and a passion for solving real-world problems through technology.
+                    </p>
+                    <p class="text-air-force-blue-400 mb-8 leading-relaxed">
+                        From building full-stack applications with the MERN stack to developing AI-powered research agents using LangChain, I enjoy working on projects that combine technical excellence with practical impact. I'm particularly interested in the intersection of software engineering and data analytics.
+                    </p>
+                    
+                    <!-- Key Highlights -->
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-yinmn-blue-500 rounded-full mr-4"></div>
+                            <span class="text-oxford-blue-400">Quick learner with strong problem-solving skills</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-yinmn-blue-500 rounded-full mr-4"></div>
+                            <span class="text-oxford-blue-400">Experience in full-stack development and data analytics</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-yinmn-blue-500 rounded-full mr-4"></div>
+                            <span class="text-oxford-blue-400">Multiple industry certifications and achievements</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-yinmn-blue-500 rounded-full mr-4"></div>
+                            <span class="text-oxford-blue-400">Leadership experience and community involvement</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education -->
+                <div class="bg-white p-8 rounded-xl card-shadow">
+                    <h3 class="text-xl font-semibold text-oxford-blue-500 mb-6">Education</h3>
+                    
+                    <div class="space-y-6">
+                        <!-- VIT-AP -->
+                        <div class="border-l-4 border-yinmn-blue-500 pl-6">
+                            <h4 class="font-semibold text-oxford-blue-500">B.Tech in Computer Science and Business Systems</h4>
+                            <p class="text-air-force-blue-400">VIT-AP University, Amaravati</p>
+                            <p class="text-sm text-air-force-blue-300">Sept 2022 – May 2026</p>
+                            <p class="text-sm text-yinmn-blue-500 font-medium">CGPA: 8.2 / 10.0</p>
+                            <p class="text-sm text-air-force-blue-400 mt-2">
+                                Relevant Coursework: Data Structures and Algorithms, DBMS, OS, OOP, Computer Networks
+                            </p>
+                        </div>
+                        
+                        <!-- Class XII -->
+                        <div class="border-l-4 border-silver-lake-blue-400 pl-6">
+                            <h4 class="font-semibold text-oxford-blue-500">Class XII – GHSEB</h4>
+                            <p class="text-air-force-blue-400">Sett R.J.J. High School, Valsad</p>
+                            <p class="text-sm text-air-force-blue-300">Apr 2020 – Mar 2022</p>
+                            <p class="text-sm text-silver-lake-blue-500 font-medium">Percentage: 71.2%</p>
+                        </div>
+                        
+                        <!-- Class X -->
+                        <div class="border-l-4 border-ash-gray-400 pl-6">
+                            <h4 class="font-semibold text-oxford-blue-500">Class X – CBSE</h4>
+                            <p class="text-air-force-blue-400">M.G.M Amin & V.N. Savani's Vallabh Ashram, Valsad</p>
+                            <p class="text-sm text-air-force-blue-300">Apr 2007 – Mar 2020</p>
+                            <p class="text-sm text-ash-gray-500 font-medium">Percentage: 91.8%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding bg-gradient-to-br from-platinum-600 to-platinum-700">
+        <div class="container-max">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-oxford-blue-500 mb-4 font-space-grotesk">Featured Projects</h2>
+                <div class="w-20 h-1 bg-yinmn-blue-500 mx-auto mb-4"></div>
+                <p class="text-air-force-blue-400 max-w-2xl mx-auto">
+                    Here are some of my key projects that showcase my skills in full-stack development, data analysis, and AI/ML.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- E-commerce Price Tracker -->
+                <div class="bg-white rounded-xl p-8 card-shadow hover-lift">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-yinmn-blue-500 to-silver-lake-blue-500 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-chart-line text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-oxford-blue-500">E-commerce Price Tracker</h3>
+                    </div>
+                    <p class="text-air-force-blue-400 mb-6 leading-relaxed">
+                        Built a comprehensive price monitoring system using web scraping to track price changes across multiple e-commerce platforms, helping users make informed purchasing decisions.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-transparent text-oxford-blue-500 border border-oxford-blue-500 rounded-full text-sm">Python</span>
+                        <span class="px-3 py-1 bg-transparent text-oxford-blue-500 border border-oxford-blue-500 rounded-full text-sm">Puppeteer</span>
+                        <span class="px-3 py-1 bg-transparent text-oxford-blue-500 border border-oxford-blue-500 rounded-full text-sm">MongoDB</span>
+                        <span class="px-3 py-1 bg-transparent text-oxford-blue-500 border border-oxford-blue-500 rounded-full text-sm">Next.js</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-midnight-green-500 hover:text-midnight-green-600 font-medium">
+                            <i class="fab fa-github mr-2"></i>View Code
+                        </a>
+                        <a href="#" class="text-midnight-green-500 hover:text-midnight-green-600 font-medium">
+                            <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Expense Tracker -->
+                <div class="bg-white rounded-xl p-8 card-shadow hover-lift">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-silver-lake-blue-500 to-ash-gray-500 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-wallet text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-oxford-blue-500">Expense Tracker</h3>
+                    </div>
+                    <p class="text-air-force-blue-400 mb-6 leading-relaxed">
+                        Developed a full-stack MERN application for personal financial management with features like expense categorization, budget tracking, and interactive data visualizations.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-transparent text-oxford-blue-500 border border-oxford-blue-500 rounded-full text-sm">MongoDB</span>
+                        <span class="px-3 py-1 bg-transparent text-oxford-blue-500 border border-oxford-blue-500 rounded-full text-sm">Express.js</span>
+                        <span class="px-3 py-1 bg-transparent text-oxford-blue-500 border border-oxford-blue-500 rounded-full text-sm">React.js</span>
+                        <span class="px-3 py-1 bg-transparent text-oxford-blue-500 border border-oxford-blue-500 rounded-full text-sm">Node.js</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-midnight-green-500 hover:text-midnight-green-600 font-medium">
+                            <i class="fab fa-github mr-2"></i>View Code
+                        </a>
+                        <a href="#" class="text-midnight-green-500 hover:text-midnight-green-600 font-medium">
+                            <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Walmart Sales Analysis -->
+                <div class="bg-white rounded-xl p-8 card-shadow hover-lift">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-ash-gray-500 to-beige-400 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-chart-bar text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-oxford-blue-500">Walmart Sales Analysis</h3>
+                    </div>
+                    <p class="text-air-force-blue-400 mb-6 leading-relaxed">
+                        Performed comprehensive data analysis on Walmart sales data to identify trends, seasonal patterns, and performance metrics using advanced statistical techniques and visualizations.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-transparent text-oxford-blue-500 border border-oxford-blue-500 rounded-full text-sm">Python</span>
+                        <span class="px-3 py-1 bg-transparent text-oxford-blue-500 border border-oxford-blue-500 rounded-full text-sm">Pandas</span>
+                        <span class="px-3 py-1 bg-transparent text-oxford-blue-500 border border-oxford-blue-500 rounded-full text-sm">Matplotlib</span>
+                        <span class="px-3 py-1 bg-transparent text-oxford-blue-500 border border-oxford-blue-500 rounded-full text-sm">PostgreSQL</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="https://github.com/chintanlad10/walmart_analysis" class="text-midnight-green-500 hover:text-midnight-green-600 font-medium">
+                            <i class="fab fa-github mr-2"></i>View Code
+                        </a>
+                        <a href="#" class="text-midnight-green-500 hover:text-midnight-green-600 font-medium">
+                            <i class="fas fa-external-link-alt mr-2"></i>View Analysis
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- AI Research Agent -->
+                <div class="bg-white rounded-xl p-8 card-shadow hover-lift">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-midnight-green-500 to-air-force-blue-500 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-robot text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-oxford-blue-500">AI Research Agent</h3>
+                    </div>
+                    <p class="text-air-force-blue-400 mb-6 leading-relaxed">
+                        Built an intelligent research assistant using LangChain that can automatically gather, analyze, and synthesize information from multiple sources to generate comprehensive research reports.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-transparent text-oxford-blue-500 border border-oxford-blue-500 rounded-full text-sm">Python</span>
+                        <span class="px-3 py-1 bg-transparent text-oxford-blue-500 border border-oxford-blue-500 rounded-full text-sm">LangChain</span>
+                        <span class="px-3 py-1 bg-transparent text-oxford-blue-500 border border-oxford-blue-500 rounded-full text-sm">OpenAI API</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-midnight-green-500 hover:text-midnight-green-600 font-medium">
+                            <i class="fab fa-github mr-2"></i>View Code
+                        </a>
+                        <a href="#" class="text-midnight-green-500 hover:text-midnight-green-600 font-medium">
+                            <i class="fas fa-external-link-alt mr-2"></i>Try Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding">
+        <div class="container-max">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-oxford-blue-500 mb-4 font-space-grotesk">Technical Skills</h2>
+                <div class="w-20 h-1 bg-yinmn-blue-500 mx-auto mb-4"></div>
+                <p class="text-air-force-blue-400 max-w-2xl mx-auto">
+                    A comprehensive overview of my technical expertise across various domains of software development and data analysis.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Frontend Category -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-semibold text-oxford-blue-400/70 mb-6">Frontend</h3>
+                    <div class="space-y-0">
+                        <!-- React -->
+                        <div class="flex items-center p-4 border-t border-platinum-300 hover:bg-platinum-600/5 transition-colors">
+                            <div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-oxford-blue-500 mb-1">React</h4>
+                                <p class="text-sm text-oxford-blue-400/70">For building fast, interactive UIs</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Next.js -->
+                        <div class="flex items-center p-4 border-t border-platinum-300 hover:bg-platinum-600/5 transition-colors">
+                            <div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-oxford-blue-500 mb-1">Next.js</h4>
+                                <p class="text-sm text-oxford-blue-400/70">React framework with routing & SSR</p>
+                            </div>
+                        </div>
+                        
+                        <!-- HTML/CSS -->
+                        <div class="flex items-center p-4 border-t border-platinum-300 hover:bg-platinum-600/5 transition-colors">
+                            <div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-oxford-blue-500 mb-1">HTML5 & CSS3</h4>
+                                <p class="text-sm text-oxford-blue-400/70">Modern web markup and styling</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Tailwind CSS -->
+                        <div class="flex items-center p-4 border-t border-platinum-300 hover:bg-platinum-600/5 transition-colors">
+                            <div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-oxford-blue-500 mb-1">Tailwind CSS</h4>
+                                <p class="text-sm text-oxford-blue-400/70">Utility-first CSS framework</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Backend & Languages Category -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-semibold text-oxford-blue-400/70 mb-6">Backend & Languages</h3>
+                    <div class="space-y-0">
+                        <!-- Python -->
+                        <div class="flex items-center p-4 border-t border-platinum-300 hover:bg-platinum-600/5 transition-colors">
+                            <div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-oxford-blue-500 mb-1">Python</h4>
+                                <p class="text-sm text-oxford-blue-400/70">Data analysis, AI/ML, and backend</p>
+                            </div>
+                        </div>
+                        
+                        <!-- JavaScript -->
+                        <div class="flex items-center p-4 border-t border-platinum-300 hover:bg-platinum-600/5 transition-colors">
+                            <div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-oxford-blue-500 mb-1">JavaScript</h4>
+                                <p class="text-sm text-oxford-blue-400/70">Full-stack web development</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Node.js -->
+                        <div class="flex items-center p-4 border-t border-platinum-300 hover:bg-platinum-600/5 transition-colors">
+                            <div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-oxford-blue-500 mb-1">Node.js</h4>
+                                <p class="text-sm text-oxford-blue-400/70">Server-side JavaScript runtime</p>
+                            </div>
+                        </div>
+                        
+                        <!-- C++ -->
+                        <div class="flex items-center p-4 border-t border-platinum-300 hover:bg-platinum-600/5 transition-colors">
+                            <div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-oxford-blue-500 mb-1">C++</h4>
+                                <p class="text-sm text-oxford-blue-400/70">System programming and algorithms</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Database & Cloud Category -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-semibold text-oxford-blue-400/70 mb-6">Database & Cloud</h3>
+                    <div class="space-y-0">
+                        <!-- MongoDB -->
+                        <div class="flex items-center p-4 border-t border-platinum-300 hover:bg-platinum-600/5 transition-colors">
+                            <div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-oxford-blue-500 mb-1">MongoDB</h4>
+                                <p class="text-sm text-oxford-blue-400/70">NoSQL document database</p>
+                            </div>
+                        </div>
+                        
+                        <!-- MySQL -->
+                        <div class="flex items-center p-4 border-t border-platinum-300 hover:bg-platinum-600/5 transition-colors">
+                            <div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-oxford-blue-500 mb-1">MySQL</h4>
+                                <p class="text-sm text-oxford-blue-400/70">Popular relational database</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Neo4j -->
+                        <div class="flex items-center p-4 border-t border-platinum-300 hover:bg-platinum-600/5 transition-colors">
+                            <div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/neo4j/neo4j-original.svg" alt="Neo4j" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-oxford-blue-500 mb-1">Neo4j</h4>
+                                <p class="text-sm text-oxford-blue-400/70">Graph database platform</p>
+                            </div>
+                        </div>
+                        
+                        <!-- AWS -->
+                        <div class="flex items-center p-4 border-t border-platinum-300 hover:bg-platinum-600/5 transition-colors">
+                            <div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-oxford-blue-500 mb-1">AWS</h4>
+                                <p class="text-sm text-oxford-blue-400/70">Cloud computing and services</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Oracle Cloud Infrastructure -->
+                        <div class="flex items-center p-4 border-t border-platinum-300 hover:bg-platinum-600/5 transition-colors">
+                            <div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg" alt="Oracle Cloud Infrastructure" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-oxford-blue-500 mb-1">Oracle Cloud Infrastructure</h4>
+                                <p class="text-sm text-oxford-blue-400/70">Enterprise cloud platform</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tools & Analytics Category -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-semibold text-oxford-blue-400/70 mb-6">Tools & Analytics</h3>
+                    <div class="space-y-0">
+                        <!-- Git -->
+                        <div class="flex items-center p-4 border-t border-platinum-300 hover:bg-platinum-600/5 transition-colors">
+                            <div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-oxford-blue-500 mb-1">Git</h4>
+                                <p class="text-sm text-oxford-blue-400/70">Version control system</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Power BI -->
+                        <div class="flex items-center p-4 border-t border-platinum-300 hover:bg-platinum-600/5 transition-colors">
+                            <div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                <img src="https://images.ctfassets.net/bx9krvy0u3sx/2201DGV2mpKGovSfW1LQqV/11cf7f409aef0334e9b12bd445e7326d/pbi_logo.png?w=2160&fm=webp&q=80" alt="Power BI" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-oxford-blue-500 mb-1">Power BI</h4>
+                                <p class="text-sm text-oxford-blue-400/70">Business intelligence and analytics</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Tableau -->
+                        <div class="flex items-center p-4 border-t border-platinum-300 hover:bg-platinum-600/5 transition-colors">
+                            <div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                <img src="https://logos-world.net/wp-content/uploads/2021/10/Tableau-Symbol.png" alt="Tableau" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-oxford-blue-500 mb-1">Tableau</h4>
+                                <p class="text-sm text-oxford-blue-400/70">Data visualization platform</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Linux -->
+                        <div class="flex items-center p-4 border-t border-platinum-300 hover:bg-platinum-600/5 transition-colors">
+                            <div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 mr-4">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-oxford-blue-500 mb-1">Linux</h4>
+                                <p class="text-sm text-oxford-blue-400/70">Operating system and command line</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="section-padding bg-gradient-to-br from-platinum-600 to-platinum-700">
+        <div class="container-max">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-oxford-blue-500 mb-4 font-space-grotesk">Certifications</h2>
+                <div class="w-20 h-1 bg-yinmn-blue-500 mx-auto mb-4"></div>
+                <p class="text-air-force-blue-400 max-w-2xl mx-auto">
+                    Professional certifications that validate my expertise in cloud computing, data analysis, and machine learning.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Oracle Certification -->
+                <div class="bg-white rounded-xl p-6 card-shadow hover-lift text-center">
+                    <div class="flex items-center justify-center mx-auto mb-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg" alt="Oracle" class="w-16 h-16 object-contain">
+                    </div>
+                    <h3 class="font-semibold text-oxford-blue-500 mb-2">Oracle Cloud AI Professional</h3>
+                    <p class="text-sm text-air-force-blue-400 mb-2">Oracle</p>
+                    <p class="text-xs text-air-force-blue-300">Professional Certicate</p>
+                </div>
+                
+                <!-- AWS Certification -->
+                <div class="bg-white rounded-xl p-6 card-shadow hover-lift text-center">
+                    <div class="flex items-center justify-center mx-auto mb-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="w-16 h-16 object-contain">
+                    </div>
+                    <h3 class="font-semibold text-oxford-blue-500 mb-2">AWS Cloud Practitioner Essentials</h3>
+                    <p class="text-sm text-air-force-blue-400 mb-2">AWS Academy</p>
+                    <p class="text-xs text-air-force-blue-300">Certificate</p>
+                </div>
+                
+                <!-- IBM Data Analysis -->
+                <div class="bg-white rounded-xl p-6 card-shadow hover-lift text-center">
+                    <div class="flex items-center justify-center mx-auto mb-4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" class="w-16 h-12 object-contain">
+                    </div>
+                    <h3 class="font-semibold text-oxford-blue-500 mb-2">Data Analysis Using Python</h3>
+                    <p class="text-sm text-air-force-blue-400 mb-2">IBM</p>
+                    <p class="text-xs text-air-force-blue-300">Certificate</p>
+                </div>
+                
+                <!-- Linux Foundation -->
+                <div class="bg-white rounded-xl p-6 card-shadow hover-lift text-center">
+                    <div class="flex items-center justify-center mx-auto mb-4">
+                        <img src="https://images.credly.com/images/e6066b96-c59d-49b6-87cc-d8873022e84f/blob.png" alt="Linux Foundation" class="w-16 h-16 object-contain">
+                    </div>
+                    <h3 class="font-semibold text-oxford-blue-500 mb-2">Introduction to Linux</h3>
+                    <p class="text-sm text-air-force-blue-400 mb-2">The Linux Foundation</p>
+                    <p class="text-xs text-air-force-blue-300">Certificate</p>
+                </div>
+            </div>
+            
+            <!-- IBM ML Certification -->
+            <div class="flex justify-center mt-8">
+                <div class="bg-white rounded-xl p-6 card-shadow hover-lift text-center max-w-sm">
+                    <div class="flex items-center justify-center mx-auto mb-4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" class="w-16 h-12 object-contain">
+                    </div>
+                    <h3 class="font-semibold text-oxford-blue-500 mb-2">Machine Learning with Python</h3>
+                    <p class="text-sm text-air-force-blue-400 mb-2">Level 1 - IBM</p>
+                    <p class="text-xs text-air-force-blue-300">Professional Certificate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Achievements Section -->
+    <section id="experience" class="section-padding">
+        <div class="container-max">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-oxford-blue-500 mb-4 font-space-grotesk">Experience & Achievements</h2>
+                <div class="w-20 h-1 bg-yinmn-blue-500 mx-auto mb-4"></div>
+                <p class="text-air-force-blue-400 max-w-2xl mx-auto">
+                    Leadership roles, achievements, and community involvement that showcase my diverse interests and capabilities.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Leadership Experience -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-oxford-blue-500 mb-8">Leadership & Volunteering</h3>
+                    <div class="space-y-6">
+                        <!-- House Sports Captain -->
+                        <div class="bg-white rounded-xl p-6 card-shadow hover-lift">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-gradient-to-br from-yinmn-blue-500 to-silver-lake-blue-500 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-medal text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-oxford-blue-500 mb-2">House Sports Captain</h4>
+                                    <p class="text-air-force-blue-400 mb-2">Green House, Vallabh Ashram</p>
+                                    <p class="text-sm text-air-force-blue-300 mb-3">Apr 2018 - Mar 2019</p>
+                                    <p class="text-sm text-air-force-blue-400">
+                                        Led and organized sports activities for the Green House, promoting teamwork and healthy competition among students.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- GeeksforGeeks Member -->
+                        <div class="bg-white rounded-xl p-6 card-shadow hover-lift">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-gradient-to-br from-silver-lake-blue-500 to-ash-gray-500 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-code text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-oxford-blue-500 mb-2">Member</h4>
+                                    <p class="text-air-force-blue-400 mb-2">Geeks for Geeks Student Chapter – VIT-AP</p>
+                                    <p class="text-sm text-air-force-blue-300 mb-3">Aug 2023 – Nov 2023</p>
+                                    <p class="text-sm text-air-force-blue-400">
+                                        Active participant in coding competitions and technical workshops, contributing to the programming community.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Bulls and Bears Club -->
+                        <div class="bg-white rounded-xl p-6 card-shadow hover-lift">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-gradient-to-br from-ash-gray-500 to-midnight-green-500 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-chart-line text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-oxford-blue-500 mb-2">Member</h4>
+                                    <p class="text-air-force-blue-400 mb-2">Bulls and Bears Club – VIT-AP</p>
+                                    <p class="text-sm text-air-force-blue-300 mb-3">Dec 2023 – May 2024</p>
+                                    <p class="text-sm text-air-force-blue-400">
+                                        Engaged in financial market analysis and investment strategies, enhancing business acumen.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Achievements -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-oxford-blue-500 mb-8">Achievements</h3>
+                    <div class="space-y-6">
+                        <!-- Microsoft AI Skillsfest -->
+                        <div class="bg-white rounded-xl p-6 card-shadow hover-lift">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fab fa-microsoft text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-oxford-blue-500">Winner - Microsoft AI Skillsfest</h4>
+                                    <p class="text-sm text-air-force-blue-400">Technical Competition</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Drawing Achievements -->
+                        <div class="bg-white rounded-xl p-6 card-shadow hover-lift">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-700 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-paint-brush text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-oxford-blue-500">Drawing Certifications</h4>
+                                    <p class="text-sm text-air-force-blue-400">Elementary & Intermediate with A grade</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- JCI Drawing Competition -->
+                        <div class="bg-white rounded-xl p-6 card-shadow hover-lift">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-green-600 to-green-700 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-trophy text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-oxford-blue-500">JCI Drawing Competition</h4>
+                                    <p class="text-sm text-air-force-blue-400">Two-time winner</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Sports Achievements -->
+                        <div class="bg-white rounded-xl p-6 card-shadow hover-lift">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-orange-600 to-orange-700 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-futbol text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-oxford-blue-500">Sports Achievements</h4>
+                                    <p class="text-sm text-air-force-blue-400">Inter-School Football Winner, Yellow Belt Karate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-gradient-to-br from-oxford-blue-500 to-yinmn-blue-600 text-white">
+        <div class="container-max">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4 font-space-grotesk text-white">Let's Connect</h2>
+                <div class="w-20 h-1 bg-platinum-400 mx-auto mb-4"></div>
+                <p class="text-white max-w-2xl mx-auto">
+                    I'm always excited to discuss new opportunities, collaborate on interesting projects, or simply connect with fellow developers and data enthusiasts.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <!-- Contact Info -->
+                <div class="lg:mr-4 pl-12">
+                    <h3 class="text-2xl font-semibold mb-8 text-white">Get In Touch</h3>
+                    <div class="space-y-6">
+                        <!-- Email -->
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-platinum-400/20 rounded-lg flex items-center justify-center mr-4 transition-transform duration-300 hover:scale-110 hover:rotate-12">
+                                <i class="fas fa-envelope text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-white font-medium">Email</p>
+                                <a href="mailto:chintanlad1107@gmail.com" class="text-white transition-all duration-300 hover:underline hover:tracking-wider">
+                                    chintanlad1107@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Location -->
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-platinum-400/20 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-white font-medium">Location</p>
+                                <p class="text-white">Gujarat, India</p>
+                            </div>
+                        </div>
+                        
+                        <!-- LinkedIn -->
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-platinum-400/20 rounded-lg flex items-center justify-center mr-4 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-platinum-400/30">
+                                <i class="fab fa-linkedin text-white text-xl transition-transform duration-300 hover:scale-125"></i>
+                            </div>
+                            <div>
+                                <p class="text-white font-medium">LinkedIn</p>
+                                <a href="https://linkedin.com/in/chintanlad1107" target="_blank" class="text-white transition-all duration-300 hover:underline hover:translate-x-2 inline-block">
+                                    chintanlad1107
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- GitHub -->
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-platinum-400/20 rounded-lg flex items-center justify-center mr-4 transition-all duration-300 hover:scale-110 hover:rotate-6 hover:shadow-md">
+                                <i class="fab fa-github text-white text-xl transition-transform duration-300 hover:rotate-12"></i>
+                            </div>
+                            <div>
+                                <p class="text-white font-medium">GitHub</p>
+                                <a href="https://github.com/chintanlad10" target="_blank" class="text-white transition-all duration-300 hover:underline hover:tracking-wide hover:font-semibold">
+                                    chintanlad10
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                    <h3 class="text-2xl font-semibold mb-8 text-white">Send a Message</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-white font-medium mb-2">Name</label>
+                            <input type="text" id="name" name="name" required 
+                                   class="w-full px-4 py-3 bg-white/10 border border-platinum-400/30 rounded-lg text-white placeholder-platinum-300 focus:outline-none focus:border-platinum-300">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-white font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full px-4 py-3 bg-white/10 border border-platinum-400/30 rounded-lg text-white placeholder-platinum-300 focus:outline-none focus:border-platinum-300">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-white font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" required 
+                                   class="w-full px-4 py-3 bg-white/10 border border-platinum-400/30 rounded-lg text-white placeholder-platinum-300 focus:outline-none focus:border-platinum-300">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-white font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" required 
+                                      class="w-full px-4 py-3 bg-white/10 border border-platinum-400/30 rounded-lg text-white placeholder-platinum-300 focus:outline-none focus:border-platinum-300"></textarea>
+                        </div>
+                        <button type="submit" 
+                                class="w-full bg-transparent border-2 border-white text-white py-3 rounded-lg font-medium hover:bg-white hover:text-oxford-blue-500 transition-colors">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-oxford-blue-600 text-white py-8">
+        <div class="container-max">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>&copy; 2025 Chintan Lad. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://linkedin.com/in/chintanlad1107" target="_blank" class="text-white transition-all duration-300 hover:scale-125 inline-block">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://github.com/chintanlad10" target="_blank" class="text-white transition-all duration-300 hover:scale-125 inline-block">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="mailto:chintanlad1107@gmail.com" class="text-white transition-all duration-300 hover:scale-125 hover:translate-y-1 inline-block">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cursor CSS Files -->
+    <link rel="stylesheet" href="cursor.css">
+    
+    <!-- Cursor JavaScript -->
+    <script src="script.js"></script>
+    <script src="cursor.js"></script>
+    
+    <!-- Logo Animation Script -->
+    <script>
+        // Handle hamburger menu toggle (backup if not already in script.js)
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerToggle = document.querySelector('[data-collapse-toggle="navbar-hamburger"]');
+            const hamburgerMenu = document.getElementById('navbar-hamburger');
+            
+            if (hamburgerToggle && hamburgerMenu) {
+                hamburgerToggle.addEventListener('click', function() {
+                    hamburgerMenu.classList.toggle('hidden');
+                    
+                    // Update aria-expanded attribute
+                    const isExpanded = !hamburgerMenu.classList.contains('hidden');
+                    hamburgerToggle.setAttribute('aria-expanded', isExpanded);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+/* Custom Cursor Styles */
+* {
+  cursor: none !important;
+}
+
+body {
+  cursor: none !important;
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  background-color: rgba(107, 140, 174, 0.7);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+  opacity: 1 !important;
+  visibility: visible !important;
+  will-change: transform;
+}
+
+/* Cursor states */
+.custom-cursor.pointer {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(90, 123, 168, 0.7);
+}
+
+.custom-cursor.pointer-click {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(74, 107, 152, 0.8);
+}
+
+.custom-cursor.text {
+  width: 3px;
+  height: 28px;
+  background: rgba(107, 140, 174, 0.7);
+  border-radius: 2px;
+}
+
+.custom-cursor.text-click {
+  height: 24px;
+}
+
+.custom-cursor.default-click {
+  width: 18px;
+  height: 18px;
+  background-color: rgba(90, 123, 168, 0.8);
+}
+
+/* Additional cursor states for specific elements */
+.custom-cursor.nav-hover {
+  width: 35px;
+  height: 35px;
+  background-color: rgba(90, 123, 168, 0.7);
+}
+
+.custom-cursor.project-hover {
+  width: 45px;
+  height: 45px;
+  background-color: rgba(74, 107, 152, 0.7);
+}
+
+.custom-cursor.cta-hover {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(58, 91, 136, 0.7);
+}
