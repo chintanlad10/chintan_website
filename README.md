@@ -43,13 +43,6 @@ website2/
 - Edge (latest)
 - Mobile browsers
 
-## 📞 Contact
-
-- **Email**: chintanlad1107@gmail.com
-- **Phone**: +91 97273 32232
-- **LinkedIn**: [chintanlad1107](https://linkedin.com/in/chintanlad1107)
-- **GitHub**: [chintanlad10](https://github.com/chintanlad10)
-
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
