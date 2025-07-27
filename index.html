@@ -1,282 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+=============================================================================
+CHINTAN LAD - PERSONAL PORTFOLIO WEBSITE
+=============================================================================
+Professional portfolio showcasing skills in software engineering and data analytics
+Built with: HTML5, CSS3, Tailwind CSS, JavaScript
+Author: Chintan Lad
+Version: 2.0
+Last Updated: July 2025
+=============================================================================
+-->
 <head>
+    <!-- =================================================================
+         META & DOCUMENT CONFIGURATION
+         ================================================================= -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chintan Lad</title>
     <meta name="description" content="Final-year Computer Science student specializing in software engineering and data analytics. Building innovative solutions with MERN stack, AI/ML, and cloud technologies.">
     
-    <!-- Favicon -->
+    <!-- =================================================================
+         FAVICON CONFIGURATION
+         ================================================================= -->
     <link rel="icon" type="image/png" href="https://framerusercontent.com/images/3dpALmvrIR88qPmbDlYoTyJSig.png">
     <link rel="shortcut icon" type="image/png" href="https://framerusercontent.com/images/3dpALmvrIR88qPmbDlYoTyJSig.png">
     <link rel="apple-touch-icon" href="https://framerusercontent.com/images/3dpALmvrIR88qPmbDlYoTyJSig.png">
     
+    <!-- =================================================================
+         EXTERNAL LIBRARIES & FRAMEWORKS
+         ================================================================= -->
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Framer Motion -->
     <script src="https://unpkg.com/framer-motion@11.3.21/dist/framer-motion.js"></script>
     
-    <!-- Custom Tailwind Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'rich-black': {
-                            DEFAULT: '#0d1b2a',
-                            100: '#030609',
-                            200: '#050b11',
-                            300: '#08111a',
-                            400: '#0b1622',
-                            500: '#0d1b2a',
-                            600: '#234870',
-                            700: '#3875b6',
-                            800: '#74a3d4',
-                            900: '#bad1ea'
-                        },
-                        'oxford-blue': {
-                            DEFAULT: '#1b263b',
-                            100: '#05080c',
-                            200: '#0b0f18',
-                            300: '#101724',
-                            400: '#161f30',
-                            500: '#1b263b',
-                            600: '#364c75',
-                            700: '#5172af',
-                            800: '#8ba1ca',
-                            900: '#c5d0e4'
-                        },
-                        'yinmn-blue': {
-                            DEFAULT: '#415a77',
-                            100: '#0d1218',
-                            200: '#1a242f',
-                            300: '#273647',
-                            400: '#34485f',
-                            500: '#415a77',
-                            600: '#587aa1',
-                            700: '#819bb9',
-                            800: '#abbcd1',
-                            900: '#d5dee8'
-                        },
-                        'silver-lake-blue': {
-                            DEFAULT: '#778da9',
-                            100: '#161c23',
-                            200: '#2c3746',
-                            300: '#425369',
-                            400: '#586f8d',
-                            500: '#778da9',
-                            600: '#91a2ba',
-                            700: '#acbacb',
-                            800: '#c8d1dc',
-                            900: '#e3e8ee'
-                        },
-                        'platinum': {
-                            DEFAULT: '#e0e1dd',
-                            100: '#2e2f2a',
-                            200: '#5b5e53',
-                            300: '#898c7e',
-                            400: '#b4b6ad',
-                            500: '#e0e1dd',
-                            600: '#e5e6e3',
-                            700: '#ececea',
-                            800: '#f2f3f1',
-                            900: '#f9f9f8'
-                        },
-                        'midnight-green': {
-                            DEFAULT: '#124559',
-                            100: '#040e12',
-                            200: '#071c24',
-                            300: '#0b2935',
-                            400: '#0f3747',
-                            500: '#124559',
-                            600: '#20799c',
-                            700: '#36a9d6',
-                            800: '#79c5e4',
-                            900: '#bce2f1'
-                        },
-                        'air-force-blue': {
-                            DEFAULT: '#598392',
-                            100: '#121a1d',
-                            200: '#24343a',
-                            300: '#354e57',
-                            400: '#476874',
-                            500: '#598392',
-                            600: '#769dab',
-                            700: '#99b6c0',
-                            800: '#bbced5',
-                            900: '#dde7ea'
-                        },
-                        'ash-gray': {
-                            DEFAULT: '#aec3b0',
-                            100: '#1f2a20',
-                            200: '#3e5441',
-                            300: '#5e7f61',
-                            400: '#83a386',
-                            500: '#aec3b0',
-                            600: '#bdcebf',
-                            700: '#cedbcf',
-                            800: '#dee7df',
-                            900: '#eff3ef'
-                        },
-                        'beige': {
-                            DEFAULT: '#eff6e0',
-                            100: '#384915',
-                            200: '#71912a',
-                            300: '#a4cc4e',
-                            400: '#c9e197',
-                            500: '#eff6e0',
-                            600: '#f2f8e6',
-                            700: '#f5f9ec',
-                            800: '#f8fbf2',
-                            900: '#fcfdf9'
-                        }
-                    },
-                    fontFamily: {
-                        'inter': ['Inter', 'system-ui', 'sans-serif'],
-                        'space-grotesk': ['Space Grotesk', 'system-ui', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Fonts -->
+    <!-- =================================================================
+         TYPOGRAPHY & FONTS
+         ================================================================= -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Icons -->
+    <!-- =================================================================
+         ICONS & CUSTOM STYLES
+         ================================================================= -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <style>
-        body {
-            background-color: rgb(248, 247, 255);
-            color: rgb(29, 61, 60);
-            font-family: 'Inter', system-ui, sans-serif;
-        }
-        
-        .section-padding {
-            padding: 5rem 0;
-        }
-        
-        .container-max {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, rgba(13, 27, 42, 0.05) 0%, rgba(65, 90, 119, 0.05) 100%);
-        }
-        
-        .card-shadow {
-            box-shadow: 0 10px 25px rgba(13, 27, 42, 0.1);
-        }
-        
-        .smooth-scroll {
-            scroll-behavior: smooth;
-        }
-        
-        /* LinkedIn-style profile section */
-        .profile-card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
-            border: 1px solid rgba(13, 27, 42, 0.1);
-        }
-        
-        /* Navigation hover effects */
-        .nav-link {
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #415a77;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        /* Video Background Styles */
-        .header_background-video-wrapper {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-        }
-        
-        .video-wrap {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-        
-        #myVideo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        
-        /* Overlay for better text readability - matching your color scheme */
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, 
-                rgba(248, 247, 255, 0.92) 0%, 
-                rgba(224, 225, 221, 0.88) 25%,
-                rgba(65, 90, 119, 0.15) 50%,
-                rgba(27, 38, 59, 0.25) 75%,
-                rgba(248, 247, 255, 0.9) 100%);
-            z-index: 1;
-        }
-        
-        /* Alternative subtle overlay option */
-        .video-overlay-alt {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, 
-                rgba(248, 247, 255, 0.95) 0%, 
-                rgba(119, 141, 169, 0.08) 30%,
-                rgba(65, 90, 119, 0.12) 70%,
-                rgba(248, 247, 255, 0.92) 100%);
-            z-index: 1;
-        }
-        
-        /* Ensure content is above overlay */
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-    </style>
+    <!-- =================================================================
+         CUSTOM CONFIGURATION & STYLES  
+         ================================================================= -->
+    <!-- External custom styles -->
+    <link rel="stylesheet" href="./styles.css">
+    
+    <!-- External Tailwind configuration -->
+    <script src="./tailwind.config.js"></script>
 </head>
+
 <body class="smooth-scroll">
-    <!-- Navigation -->
+    <!-- =================================================================
+         MAIN NAVIGATION
+         ================================================================= -->
     <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-platinum-300">
         <div class="container-max">
             <div class="flex items-center justify-between h-16">
-                <!-- Logo -->
+                <!-- ===== BRAND LOGO WITH ANIMATION ===== -->
                 <a class="nav_logo_wrap inline-block" href="#home" aria-label="Home page" data-cta="Navigation">
                     <div class="logo-container flex items-center" style="width: 180px; height: 40px;">
                         <!-- Static Logo -->
@@ -299,7 +88,7 @@
                     </div>
                 </a>
                 
-                <!-- Desktop Navigation -->
+                <!-- ===== DESKTOP NAVIGATION LINKS ===== -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#home" class="nav-link text-oxford-blue-400 hover:text-oxford-blue-600 font-medium">Home</a>
                     <a href="#about" class="nav-link text-oxford-blue-400 hover:text-oxford-blue-600 font-medium">About</a>
@@ -309,7 +98,7 @@
                     <a href="#contact" class="nav-link text-oxford-blue-400 hover:text-oxford-blue-600 font-medium">Contact</a>
                 </div>
                 
-                <!-- Hamburger Menu Button -->
+                <!-- ===== MOBILE MENU TOGGLE BUTTON ===== -->
                 <button data-collapse-toggle="navbar-hamburger" type="button" class="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-oxford-blue-500 rounded-lg hover:bg-platinum-300 focus:outline-none focus:ring-2 focus:ring-platinum-400 md:hidden" aria-controls="navbar-hamburger" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -319,7 +108,7 @@
             </div>
         </div>
         
-        <!-- Mobile Navigation Menu -->
+        <!-- ===== MOBILE NAVIGATION DROPDOWN MENU ===== -->
         <div class="hidden w-full md:hidden" id="navbar-hamburger">
             <ul class="flex flex-col font-medium mt-4 rounded-lg bg-white border border-platinum-300">
                 <li>
@@ -344,7 +133,9 @@
         </div>
     </nav>
 
-    <!-- Hero Section - LinkedIn Profile Style with Video Background -->
+    <!-- =================================================================
+         HERO SECTION - LINKEDIN-STYLE PROFILE WITH VIDEO BACKGROUND
+         ================================================================= -->
     <section id="home" class="section-padding mt-16 relative">
         <!-- Background Video -->
         <div class="header_background-video-wrapper">
@@ -438,7 +229,9 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- =================================================================
+         ABOUT SECTION - PERSONAL INTRODUCTION & BACKGROUND
+         ================================================================= -->
     <section id="about" class="section-padding">
         <div class="container-max">
             <div class="text-center mb-16">
@@ -517,7 +310,9 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- =================================================================
+         PROJECTS SECTION - FEATURED WORK & PORTFOLIO
+         ================================================================= -->
     <section id="projects" class="section-padding bg-gradient-to-br from-platinum-600 to-platinum-700">
         <div class="container-max">
             <div class="text-center mb-16">
@@ -639,7 +434,9 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- =================================================================
+         SKILLS SECTION - TECHNICAL EXPERTISE & COMPETENCIES
+         ================================================================= -->
     <section id="skills" class="section-padding">
         <div class="container-max">
             <div class="text-center mb-16">
@@ -865,7 +662,9 @@
         </div>
     </section>
 
-    <!-- Certifications Section -->
+    <!-- =================================================================
+         CERTIFICATIONS SECTION - PROFESSIONAL CREDENTIALS & BADGES
+         ================================================================= -->
     <section class="section-padding bg-gradient-to-br from-platinum-600 to-platinum-700">
         <div class="container-max">
             <div class="text-center mb-16">
@@ -964,7 +763,9 @@
         </div>
     </section>
 
-    <!-- Experience & Achievements Section -->
+    <!-- =================================================================
+         EXPERIENCE & ACHIEVEMENTS SECTION - PROFESSIONAL BACKGROUND
+         ================================================================= -->
     <section id="experience" class="section-padding">
         <div class="container-max">
             <div class="text-center mb-16">
@@ -1094,7 +895,9 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- =================================================================
+         CONTACT SECTION - GET IN TOUCH & SOCIAL LINKS
+         ================================================================= -->
     <section id="contact" class="section-padding bg-gradient-to-br from-oxford-blue-500 to-yinmn-blue-600 text-white">
         <div class="container-max">
             <div class="text-center mb-16">
@@ -1196,7 +999,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- =================================================================
+         FOOTER - COPYRIGHT & FINAL BRANDING
+         ================================================================= -->
     <footer class="bg-oxford-blue-600 text-white py-8">
         <div class="container-max">
             <div class="flex flex-col md:flex-row justify-between items-center">
@@ -1218,14 +1023,21 @@
         </div>
     </footer>
 
-    <!-- Cursor CSS Files -->
+    <!-- =================================================================
+         EXTERNAL SCRIPTS & LIBRARIES
+         ================================================================= -->
+    <!-- Cursor enhancement styles -->
     <link rel="stylesheet" href="cursor.css">
     
-    <!-- Cursor JavaScript -->
+    <!-- Core JavaScript functionality -->
     <script src="script.js"></script>
+    
+    <!-- Custom cursor effects -->
     <script src="cursor.js"></script>
     
-    <!-- Logo Animation Script -->
+    <!-- =================================================================
+         INLINE JAVASCRIPT - MOBILE NAVIGATION HANDLER
+         ================================================================= -->
     <script>
         // Handle hamburger menu toggle (backup if not already in script.js)
         document.addEventListener('DOMContentLoaded', function() {
